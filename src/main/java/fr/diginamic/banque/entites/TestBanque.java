@@ -6,7 +6,6 @@ public class TestBanque {
         Compte compte = new Compte("123456789", 1000.0);
 
         // Afficher l'instance créée
-        System.out.println("Numéro de compte : " + compte.getNumeroCompte());
-        System.out.println("Solde du compte : " + compte.getSolde());
+        System.out.println(compte);  // Appelle automatiquement toString()
     }
 }

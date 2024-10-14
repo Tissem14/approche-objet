@@ -1,7 +1,6 @@
 package fr.diginamic.banque.entites;
 
 public class Compte {
-    // Attributs d'instance
     private String numeroCompte;
     private double solde;
 
@@ -11,33 +10,19 @@ public class Compte {
         this.solde = solde;
     }
 
-    // Méthodes d'accès (getters)
+    // Méthode pour récupérer le numéro de compte
     public String getNumeroCompte() {
         return numeroCompte;
     }
 
+    // Méthode pour récupérer le solde
     public double getSolde() {
         return solde;
     }
 
-    // Méthodes pour modifier le solde (si nécessaire)
-    public void deposer(double montant) {
-        if (montant > 0) {
-            solde += montant;
-        }
-    }
-
-    public void retirer(double montant) {
-        if (montant > 0 && solde >= montant) {
-            solde -= montant;
-        }
-    }
-
+    // Redéfinition de la méthode toString
     @Override
     public String toString() {
-        return "Compte{" +
-                "numeroCompte='" + numeroCompte + '\'' +
-                ", solde=" + solde +
-                '}';
+        return "Compte [numéro de compte=" + numeroCompte + ", solde=" + solde + "]";
     }
 }
