@@ -10,12 +10,11 @@ public class Compte {
         this.solde = solde;
     }
 
-    // Méthode pour récupérer le numéro de compte
+    // Méthodes pour récupérer les attributs
     public String getNumeroCompte() {
         return numeroCompte;
     }
 
-    // Méthode pour récupérer le solde
     public double getSolde() {
         return solde;
     }
