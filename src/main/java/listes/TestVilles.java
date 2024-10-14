@@ -6,19 +6,20 @@ public class TestVilles {
     public static void main(String[] args) {
         // Création de la liste de villes
         ArrayList<Ville> villes = new ArrayList<>();
-        villes.add(new Ville("Nice", 343000));
-        villes.add(new Ville("Carcassonne", 47800));
-        villes.add(new Ville("Narbonne", 53400));
-        villes.add(new Ville("Lyon", 484000));
-        villes.add(new Ville("Foix", 9700));
-        villes.add(new Ville("Pau", 77200));
-        villes.add(new Ville("Marseille", 850700));
-        villes.add(new Ville("Tarbes", 40600));
+        // Modifier les appels du constructeur pour inclure tous les paramètres requis
+        villes.add(new Ville("Nice", "06", "Provence-Alpes-Côte d'Azur", 343000));
+        villes.add(new Ville("Carcassonne", "11", "Occitanie", 47800));
+        villes.add(new Ville("Narbonne", "11", "Occitanie", 53400));
+        villes.add(new Ville("Lyon", "69", "Auvergne-Rhône-Alpes", 484000));
+        villes.add(new Ville("Foix", "09", "Occitanie", 9700));
+        villes.add(new Ville("Pau", "64", "Nouvelle-Aquitaine", 77200));
+        villes.add(new Ville("Marseille", "13", "Provence-Alpes-Côte d'Azur", 850700));
+        villes.add(new Ville("Tarbes", "65", "Occitanie", 40600));
 
         // Rechercher la ville la plus peuplée
         Ville villeMax = villes.get(0);
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() > villeMax.getNbHabitants()) {
+            if (ville.getPopulation() > villeMax.getPopulation()) {
                 villeMax = ville;
             }
         }
@@ -27,7 +28,7 @@ public class TestVilles {
         // Supprimer la ville la moins peuplée
         Ville villeMin = villes.get(0);
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() < villeMin.getNbHabitants()) {
+            if (ville.getPopulation() < villeMin.getPopulation()) {
                 villeMin = ville;
             }
         }
@@ -36,7 +37,7 @@ public class TestVilles {
 
         // Mettre en majuscules les villes de plus de 100 000 habitants
         for (Ville ville : villes) {
-            if (ville.getNbHabitants() > 100000) {
+            if (ville.getPopulation() > 100000) {
                 ville.setNom(ville.getNom().toUpperCase());
             }
         }
